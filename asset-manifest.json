@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wolf-multi-step-form/static/css/main.b2ef4cf9.css",
+    "main.js": "/wolf-multi-step-form/static/js/main.ba8adf3c.js",
+    "index.html": "/wolf-multi-step-form/index.html",
+    "main.b2ef4cf9.css.map": "/wolf-multi-step-form/static/css/main.b2ef4cf9.css.map",
+    "main.ba8adf3c.js.map": "/wolf-multi-step-form/static/js/main.ba8adf3c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b2ef4cf9.css",
+    "static/js/main.ba8adf3c.js"
+  ]
+}
