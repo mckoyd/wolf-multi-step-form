@@ -1,12 +1,13 @@
 import React from "react";
-import "./App.css";
+import "./styles/App.css";
 import { Routes, Route } from "react-router-dom";
+import PersonalInfo from "./pages/PersonalInfo";
 
 const App: React.FC = () => {
   return (
     <main className="App">
       <Routes>
-        <Route path="/" element={<p>Welcome home</p>} />
+        <Route path="/" element={<PersonalInfo />} />
       </Routes>
     </main>
   );
