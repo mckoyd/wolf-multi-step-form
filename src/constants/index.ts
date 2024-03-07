@@ -20,4 +20,10 @@ export const colors = {
   },
 };
 
-export const numbers = [1, 2, 3, 4];
+export const numbers: number[] = [1, 2, 3, 4];
+export const pathNamesPerNumber: { [key: number]: string } = {
+  1: "/",
+  2: "/select-your-plan",
+  3: "/add-ons",
+  4: "/finish",
+};

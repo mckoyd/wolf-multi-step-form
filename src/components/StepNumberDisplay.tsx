@@ -1,11 +1,21 @@
 import React from "react";
-import { numbers } from "../constants";
+import { numbers, pathNamesPerNumber } from "../constants";
+
+import "./StepNumberDisplay.css";
+import { useLocation } from "react-router";
 
 const StepNumberDisplay: React.FC = () => {
+  const location = useLocation();
+
   return (
     <section className="std-section">
       {numbers.map((number: number, index: number) => (
-        <span className="hollow-num" key={`${number}-${index}`}>
+        <span
+          className={`hollow-num ${
+            location.pathname === pathNamesPerNumber[number] && "filled-num"
+          }`}
+          key={`${number}-${index}`}
+        >
           {number}
         </span>
       ))}
