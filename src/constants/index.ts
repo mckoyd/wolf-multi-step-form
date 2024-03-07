@@ -19,3 +19,5 @@ export const colors = {
     white: "hsl(0, 0%, 100%)",
   },
 };
+
+export const numbers = [1, 2, 3, 4];

@@ -2,4 +2,6 @@
 }
 
 .bg-sidebar-mobile {
+  position: absolute;
+  z-index: -1;
 }
