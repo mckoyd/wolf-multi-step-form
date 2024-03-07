@@ -5,11 +5,11 @@ import PersonalInfo from "./pages/PersonalInfo";
 
 const App: React.FC = () => {
   return (
-    <main className="App">
+    <section className="App">
       <Routes>
         <Route path="/" element={<PersonalInfo />} />
       </Routes>
-    </main>
+    </section>
   );
 };
 
