@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/App.css";
 import { Routes, Route } from "react-router-dom";
-import PersonalInfo from "./pages/PersonalInfo";
+import PersonalInfo from "./PersonalInfo";
 
 const App: React.FC = () => {
   return (
