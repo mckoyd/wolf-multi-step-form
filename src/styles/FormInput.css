@@ -12,3 +12,7 @@
   font-size: 1.2em;
   padding: 0.5em;
 }
+
+.error-border {
+  border: 1px dashed red !important;
+}
