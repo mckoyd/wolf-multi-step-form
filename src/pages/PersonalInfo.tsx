@@ -11,8 +11,11 @@ import {
 } from "../state/personalInfoFormData";
 
 import "../styles/PersonalInfo.css";
+import { useNavigate } from "react-router";
 
 const PersonalInfo: React.FC = () => {
+  const navigate = useNavigate();
+
   const [showNameErrorBorder, setShowNameErrorBorder] =
     useState<boolean>(false);
   const [showEmailAddressErrorBorder, setEmailAddressErrorBorder] =
@@ -58,6 +61,8 @@ const PersonalInfo: React.FC = () => {
       setPhoneNumberErrorBorder(true);
       return;
     }
+
+    navigate("/select-your-plan");
   }, [PIName, PIEmailAddress, PIPhoneNumber]);
 
   useEffect(() => {

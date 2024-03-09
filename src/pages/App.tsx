@@ -18,6 +18,7 @@ const App: React.FC = () => {
       )}
       <Routes>
         <Route path="/" element={<PersonalInfo />} />
+        <Route path="/select-your-plan" element={<p>Select a plan</p>} />
       </Routes>
     </section>
   );
