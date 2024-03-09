@@ -1,0 +1,23 @@
+.std-section {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  margin: 2em 0;
+  color: white;
+}
+
+.hollow-num {
+  border: 1px solid white;
+  border-radius: 100%;
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1em;
+  padding: 0.5em;
+}
+
+.filled-num {
+  background-color: #bee2fd;
+  color: #022959;
+}

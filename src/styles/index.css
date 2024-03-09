@@ -1,4 +1,35 @@
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Amended to accomodate app style guide
+
+/* Fonts
+========================================================================== */
+
+/**
+ * Adds Ubuntu fonts for regular, medium, and bold font weights
+ */
+
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Ubuntu"),
+    url(../assets/fonts/Ubuntu-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  font-style: bold;
+  font-weight: 500;
+  src: local("Ubuntu"),
+    url(../assets/fonts/Ubuntu-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  font-style: bolder;
+  font-weight: 700;
+  src: local("Ubuntu"), url(../assets/fonts/Ubuntu-Bold.ttf) format("truetype");
+}
 
 /* Document
    ========================================================================== */
@@ -6,11 +37,15 @@
 /**
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
+ * 3. Change the background to fit app theme
+ * 4. Sets default font to 'Ubuntu'
  */
 
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  background-color: #eff5ff;
+  font-family: "Ubuntu";
 }
 
 /* Sections

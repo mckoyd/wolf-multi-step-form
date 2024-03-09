@@ -1,0 +1,26 @@
+.pi-section {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.pi-description {
+  color: #9699aa;
+}
+
+.pi-footer {
+  background: #ffffff;
+  box-shadow: 0px 25px 40px -20px rgba(0, 0, 0, 0.0951141);
+  margin-top: auto;
+  display: flex;
+  padding: 1em;
+  justify-content: flex-end;
+}
+
+.next-button {
+  background: #022959;
+  border-radius: 4px;
+  color: #ffffff;
+  padding: 1em;
+}
