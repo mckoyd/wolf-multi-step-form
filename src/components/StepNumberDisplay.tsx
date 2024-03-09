@@ -1,7 +1,7 @@
 import React from "react";
 import { numbers, pathNamesPerNumber } from "../constants";
 
-import "./StepNumberDisplay.css";
+import "../styles/StepNumberDisplay.css";
 import { useLocation } from "react-router";
 
 const StepNumberDisplay: React.FC = () => {

@@ -1,4 +1,10 @@
 .pi-section {
   display: flex;
   flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.pi-description {
+  color: #9699aa;
 }
