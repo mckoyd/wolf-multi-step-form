@@ -1,3 +1,7 @@
+import { ReactComponent as ArcadeIcon } from "../assets/images/icon-arcade.svg";
+import { ReactComponent as AdvancedIcon } from "../assets/images/icon-advanced.svg";
+import { ReactComponent as ProIcon } from "../assets/images/icon-pro.svg";
+
 export const layout = {
   mobile: 375,
   desktop: 1440,
@@ -27,3 +31,15 @@ export const pathNamesPerNumber: { [key: number]: string } = {
   3: "/add-ons",
   4: "/finish",
 };
+
+export interface IPlanOption {
+  Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  title: string;
+  price: number;
+}
+
+export const planOptions: IPlanOption[] = [
+  { Icon: ArcadeIcon, title: "Arcade", price: 9 },
+  { Icon: AdvancedIcon, title: "Advanced", price: 12 },
+  { Icon: ProIcon, title: "Pro", price: 15 },
+];

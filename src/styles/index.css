@@ -46,6 +46,7 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
   background-color: #eff5ff;
   font-family: "Ubuntu";
+  font-weight: 400;
 }
 
 /* Sections

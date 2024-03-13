@@ -7,6 +7,7 @@ import { useScreenSizeUpdate } from "../hooks/useScreenSizeUpdate";
 
 import "../styles/App.css";
 import { layout } from "../constants";
+import SelectYourPlan from "./SelectYourPlan";
 
 const App: React.FC = () => {
   const screenSize = useScreenSizeUpdate();
@@ -18,7 +19,9 @@ const App: React.FC = () => {
       )}
       <Routes>
         <Route path="/" element={<PersonalInfo />} />
-        <Route path="/select-your-plan" element={<p>Select a plan</p>} />
+        <Route path="/select-your-plan" element={<SelectYourPlan />} />
+        <Route path="/add-ons" element={<h2>Add-ons</h2>} />
+        <Route path="/finish" element={<h2>Finish</h2>} />
       </Routes>
     </section>
   );
