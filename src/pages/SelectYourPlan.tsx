@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import StepNumberDisplay from "../components/StepNumberDisplay";
 import InfoDisplayLayout from "../components/InfoDisplayLayout";
 import { ReactComponent as ArcadeIcon } from "../assets/images/icon-arcade.svg";
@@ -11,12 +11,21 @@ import { useNavigate } from "react-router-dom";
 const SelectYourPlan = () => {
   const navigate = useNavigate();
 
+  const [displayYearly, setDisplayYearly] = useState<boolean>(false);
+
   const handleNextButton = useCallback(() => {
     navigate("/add-ons");
   }, []);
   const handleGoBackButton = useCallback(() => {
     navigate("/");
   }, [navigate]);
+
+  const handlePlanTypeToggle = useCallback(
+    (event: React.FormEvent<HTMLInputElement>) => {
+      setDisplayYearly(event.currentTarget.checked);
+    },
+    []
+  );
   return (
     <>
       <section className="syp-section">
@@ -28,8 +37,28 @@ const SelectYourPlan = () => {
           </p>
           <section className="syp-cards">
             {planOptions.map(({ Icon, title, price }: IPlanOption) => (
-              <SYPCard Icon={Icon} title={title} price={price} rate={"mo"} />
+              <SYPCard
+                Icon={Icon}
+                title={title}
+                price={displayYearly ? price * 10 : price}
+                rate={displayYearly ? "yr" : "mo"}
+                displayYearly={displayYearly}
+                key={`${title}-${displayYearly ? price * 10 : price}`}
+              />
             ))}
+            <div className="plan-type-toggle">
+              <p className="plan-type">Monthly</p>
+              <input
+                type="checkbox"
+                className="toggle"
+                id="toggle"
+                onChange={handlePlanTypeToggle}
+              />
+              <label htmlFor="toggle" className="toggle-label">
+                Toggle
+              </label>
+              <p className="plan-type">Yearly</p>
+            </div>
           </section>
         </InfoDisplayLayout>
       </section>

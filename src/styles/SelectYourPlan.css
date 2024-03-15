@@ -22,7 +22,7 @@
   border: 1px solid #d6d9e6;
   border-radius: 8px;
   color: #022959;
-  padding: 1em;
+  padding: 0.5em;
   display: flex;
   align-items: center;
   gap: 1em;
@@ -35,7 +35,7 @@
 .syp-card-description {
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: 0.3em;
 }
 
 .syp-description-title,
@@ -45,11 +45,16 @@
 
 .syp-description-title {
   font-weight: 500;
-  font-size: 1.1em;
 }
 
 .syp-description-price {
   color: #9699aa;
+}
+
+.syp-promo-text {
+  color: #022959;
+  margin-block: 0;
+  font-size: 0.75em;
 }
 
 .syp-footer {
@@ -59,6 +64,8 @@
   display: flex;
   padding: 1em;
   justify-content: space-between;
+  height: 2em;
+  align-items: center;
 }
 
 .go-back-button {
@@ -72,4 +79,73 @@
   border-radius: 4px;
   color: #ffffff;
   padding: 1em;
+  height: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.plan-type-toggle {
+  display: flex;
+  font-size: 1em;
+  gap: 0.5em;
+  height: 1.5em;
+  align-items: center;
+  justify-content: center;
+  height: 5%;
+  background: #f8f9ff;
+}
+
+.toggle-container {
+  background: #022959;
+  border-radius: 10px;
+  width: 20%;
+  height: 100%;
+}
+
+.toggle {
+  border-radius: 100%;
+}
+
+.toggle[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.toggle-label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 45px;
+  height: 20px;
+  background: #022959;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  margin: 0 1em;
+}
+
+.toggle-label:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+.toggle:checked + .toggle-label {
+  background: #022959;
+}
+
+.toggle:checked + .toggle-label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+.toggle-label:active:after {
+  width: 10px;
 }

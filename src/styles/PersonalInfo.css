@@ -15,7 +15,9 @@
   margin-top: auto;
   display: flex;
   padding: 1em;
-  justify-content: flex-end;
+  justify-content: space-between;
+  height: 2em;
+  align-items: center;
 }
 
 .next-button {
@@ -23,4 +25,8 @@
   border-radius: 4px;
   color: #ffffff;
   padding: 1em;
+  height: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -1,12 +1,9 @@
 import React, { useCallback } from "react";
 import { IPlanOption } from "../constants";
 
-export const SYPCard: React.FC<IPlanOption & { rate: string }> = ({
-  Icon,
-  title,
-  price,
-  rate,
-}) => {
+export const SYPCard: React.FC<
+  IPlanOption & { rate: string; displayYearly: boolean }
+> = ({ Icon, title, price, rate, displayYearly }) => {
   const handleNextButton = useCallback(() => {}, []);
   return (
     <div className="syp-card">
@@ -14,6 +11,7 @@ export const SYPCard: React.FC<IPlanOption & { rate: string }> = ({
       <div className="syp-card-description">
         <p className="syp-description-title">{title}</p>
         <p className="syp-description-price">{`$${price}/${rate}`}</p>
+        {displayYearly && <p className="syp-promo-text">2 months free</p>}
       </div>
     </div>
   );
