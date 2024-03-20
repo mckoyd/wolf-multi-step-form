@@ -1,12 +1,21 @@
 .pi-section {
   display: flex;
   flex-direction: column;
-  width: 80%;
   margin: 0 auto;
+}
+.pi-title {
+  font-weight: 700;
+  line-height: 1.75em;
+  margin-block: 0;
+  margin: 0.25em 0;
+  color: #022959;
 }
 
 .pi-description {
   color: #9699aa;
+  margin-block: 0;
+  margin-bottom: 1.5em;
+  line-height: 1.5625em;
 }
 
 .pi-footer {
@@ -15,7 +24,7 @@
   margin-top: auto;
   display: flex;
   padding: 1em;
-  justify-content: space-between;
+  justify-content: flex-end;
   height: 2em;
   align-items: center;
 }
