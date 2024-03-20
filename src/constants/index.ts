@@ -24,12 +24,22 @@ export const colors = {
   },
 };
 
+export interface IPathNamePerNumber {
+  [key: number]: {
+    path: string;
+    planTitle: string;
+  };
+}
+
 export const numbers: number[] = [1, 2, 3, 4];
-export const pathNamesPerNumber: { [key: number]: string } = {
-  1: "/",
-  2: "/select-your-plan",
-  3: "/add-ons",
-  4: "/finish",
+export const pathNamesPerNumber: IPathNamePerNumber = {
+  1: {
+    path: "/",
+    planTitle: "your info",
+  },
+  2: { path: "/select-your-plan", planTitle: "select plan" },
+  3: { path: "/add-ons", planTitle: "add-ons" },
+  4: { path: "/finish", planTitle: "summary" },
 };
 
 export interface IPlanOption {

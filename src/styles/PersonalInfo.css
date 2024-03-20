@@ -39,3 +39,13 @@
   justify-content: center;
   align-items: center;
 }
+
+@media only screen and (min-width: 1440px) {
+  .pi-section {
+    flex-direction: row;
+  }
+
+  .std-section {
+    flex-direction: column;
+  }
+}

@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
+import { ReactComponent as BgSidebarDesktop } from "../assets/images/bg-sidebar-desktop.svg";
 import { useRecoilState } from "recoil";
 
 import StepNumberDisplay from "../components/StepNumberDisplay";
@@ -12,9 +13,12 @@ import {
 
 import "../styles/PersonalInfo.css";
 import { useNavigate } from "react-router";
+import { useScreenSizeUpdate } from "../hooks/useScreenSizeUpdate";
+import { layout } from "../constants";
 
 const PersonalInfo: React.FC = () => {
   const navigate = useNavigate();
+  const screenSize = useScreenSizeUpdate();
 
   const [showNameErrorBorder, setShowNameErrorBorder] =
     useState<boolean>(false);
@@ -74,7 +78,15 @@ const PersonalInfo: React.FC = () => {
   return (
     <>
       <section className="pi-section">
-        <StepNumberDisplay />
+        {screenSize > layout.mobile ? (
+          <div className="step-display-desktop-layout">
+            <StepNumberDisplay />
+            <BgSidebarDesktop className="bg-sidebar-desktop" />
+          </div>
+        ) : (
+          <StepNumberDisplay />
+        )}
+
         <InfoDisplayLayout>
           <h2 className="pi-title">Personal info</h2>
           <p className="pi-description">

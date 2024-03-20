@@ -1,24 +1,47 @@
 import React from "react";
-import { numbers, pathNamesPerNumber } from "../constants";
+import { layout, numbers, pathNamesPerNumber } from "../constants";
 
 import "../styles/StepNumberDisplay.css";
 import { useLocation } from "react-router";
+import { useScreenSizeUpdate } from "../hooks/useScreenSizeUpdate";
 
 const StepNumberDisplay: React.FC = () => {
   const location = useLocation();
+  const screenSize = useScreenSizeUpdate();
 
   return (
     <section className="std-section">
-      {numbers.map((number: number, index: number) => (
-        <span
-          className={`hollow-num ${
-            location.pathname === pathNamesPerNumber[number] && "filled-num"
-          }`}
-          key={`${number}-${index}`}
-        >
-          {number}
-        </span>
-      ))}
+      {numbers.map((number: number, index: number) =>
+        screenSize <= layout.mobile ? (
+          <span
+            className={`hollow-num ${
+              location.pathname === pathNamesPerNumber[number].path &&
+              "filled-num"
+            }`}
+            key={`${number}-${index}`}
+          >
+            {number}
+          </span>
+        ) : (
+          <div className="std-container">
+            <span
+              className={`hollow-num ${
+                location.pathname === pathNamesPerNumber[number].path &&
+                "filled-num"
+              }`}
+              key={`${number}-${index}`}
+            >
+              {number}
+            </span>
+            <div className="std-step-description-container">
+              <p className="std-step-title">STEP {number}</p>
+              <p className="std-step-description">
+                {pathNamesPerNumber[number].planTitle}
+              </p>
+            </div>
+          </div>
+        )
+      )}
     </section>
   );
 };
