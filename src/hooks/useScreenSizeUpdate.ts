@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from 'react';
 
 export const useScreenSizeUpdate: () => number = () => {
   const [screenSize, setScreenSize] = useState<number>(window.innerWidth);
@@ -8,8 +8,8 @@ export const useScreenSizeUpdate: () => number = () => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("resize", updateScreenSize);
-    return () => window.removeEventListener("resize", updateScreenSize);
+    window.addEventListener('resize', updateScreenSize);
+    return () => window.removeEventListener('resize', updateScreenSize);
   }, [screenSize]);
 
   return screenSize;

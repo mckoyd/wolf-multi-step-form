@@ -1,13 +1,13 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 
-import PersonalInfo from "./PersonalInfo";
-import { ReactComponent as BgSidebarMobile } from "../assets/images/bg-sidebar-mobile.svg";
-import { useScreenSizeUpdate } from "../hooks/useScreenSizeUpdate";
+import PersonalInfo from './PersonalInfo';
+import { ReactComponent as BgSidebarMobile } from '../assets/images/bg-sidebar-mobile.svg';
+import { useScreenSizeUpdate } from '../hooks/useScreenSizeUpdate';
 
-import "../styles/App.css";
-import { layout } from "../constants";
-import SelectYourPlan from "./SelectYourPlan";
+import '../styles/App.css';
+import { layout } from '../constants';
+import SelectYourPlan from './SelectYourPlan';
 
 const App: React.FC = () => {
   const screenSize = useScreenSizeUpdate();

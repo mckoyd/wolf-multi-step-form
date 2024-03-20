@@ -1,27 +1,24 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { useRecoilState } from "recoil";
+import React, { useCallback, useEffect, useState } from 'react';
+import { useRecoilState } from 'recoil';
 
-import StepNumberDisplay from "../components/StepNumberDisplay";
-import InfoDisplayLayout from "../components/InfoDisplayLayout";
-import FormInput from "../components/FormInput";
+import StepNumberDisplay from '../components/StepNumberDisplay';
+import InfoDisplayLayout from '../components/InfoDisplayLayout';
+import FormInput from '../components/FormInput';
 import {
   emailAddressState,
   nameState,
   phoneNumberState,
-} from "../state/personalInfoFormData";
+} from '../state/personalInfoFormData';
 
-import "../styles/PersonalInfo.css";
-import { useNavigate } from "react-router";
+import '../styles/PersonalInfo.css';
+import { useNavigate } from 'react-router';
 
 const PersonalInfo: React.FC = () => {
   const navigate = useNavigate();
 
-  const [showNameErrorBorder, setShowNameErrorBorder] =
-    useState<boolean>(false);
-  const [showEmailAddressErrorBorder, setEmailAddressErrorBorder] =
-    useState<boolean>(false);
-  const [showPhoneNumberErrorBorder, setPhoneNumberErrorBorder] =
-    useState<boolean>(false);
+  const [showNameErrorBorder, setShowNameErrorBorder] = useState<boolean>(false);
+  const [showEmailAddressErrorBorder, setEmailAddressErrorBorder] = useState<boolean>(false);
+  const [showPhoneNumberErrorBorder, setPhoneNumberErrorBorder] = useState<boolean>(false);
 
   const [PIName, setPIName] = useRecoilState(nameState);
   const [PIEmailAddress, setPIEmailAddress] = useRecoilState(emailAddressState);
@@ -31,44 +28,44 @@ const PersonalInfo: React.FC = () => {
     (e: React.FormEvent<HTMLInputElement>) => {
       setPIName(e.currentTarget.value);
     },
-    []
+    [],
   );
 
   const handleEmailAddressChange = useCallback(
     (e: React.FormEvent<HTMLInputElement>) => {
       setPIEmailAddress(e.currentTarget.value);
     },
-    []
+    [],
   );
 
   const handlePhoneNumberChange = useCallback(
     (e: React.FormEvent<HTMLInputElement>) => {
       setPIPhoneNumber(e.currentTarget.value);
     },
-    []
+    [],
   );
 
   const handleNextButton = useCallback(() => {
-    if (PIName === "") {
+    if (PIName === '') {
       setShowNameErrorBorder(true);
       return;
     }
-    if (PIEmailAddress === "") {
+    if (PIEmailAddress === '') {
       setEmailAddressErrorBorder(true);
       return;
     }
-    if (PIPhoneNumber === "") {
+    if (PIPhoneNumber === '') {
       setPhoneNumberErrorBorder(true);
       return;
     }
 
-    navigate("/select-your-plan");
+    navigate('/select-your-plan');
   }, [PIName, PIEmailAddress, PIPhoneNumber]);
 
   useEffect(() => {
-    if (PIName !== "") setShowNameErrorBorder(false);
-    if (PIEmailAddress !== "") setEmailAddressErrorBorder(false);
-    if (PIPhoneNumber !== "") setPhoneNumberErrorBorder(false);
+    if (PIName !== '') setShowNameErrorBorder(false);
+    if (PIEmailAddress !== '') setEmailAddressErrorBorder(false);
+    if (PIPhoneNumber !== '') setPhoneNumberErrorBorder(false);
   }, [PIName, PIEmailAddress, PIPhoneNumber]);
 
   return (

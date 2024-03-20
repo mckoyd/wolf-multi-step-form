@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { IPlanOption } from "../constants";
+import { IPlanOption } from "../constants/index.ts";
 
 export const SYPCard: React.FC<
   IPlanOption & { rate: string; displayYearly: boolean }

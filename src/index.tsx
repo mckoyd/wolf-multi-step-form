@@ -1,21 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { RouterProvider, createHashRouter } from "react-router-dom";
-import { RecoilRoot } from "recoil";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { RouterProvider, createHashRouter } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
 
-import App from "./pages/App";
+import App from './pages/App';
 
-import "./styles/index.css";
+import './styles/index.css';
 
 const router = createHashRouter([
   {
-    path: "/*",
+    path: '/*',
     element: <App />,
   },
 ]);
 
 const root: ReactDOM.Root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLElement
+  document.getElementById('root') as HTMLElement,
 );
 
 root.render(
@@ -23,5 +23,5 @@ root.render(
     <RecoilRoot>
       <RouterProvider router={router} />
     </RecoilRoot>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

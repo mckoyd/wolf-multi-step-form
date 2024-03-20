@@ -1,30 +1,30 @@
-import React, { useCallback, useState } from "react";
-import StepNumberDisplay from "../components/StepNumberDisplay";
-import InfoDisplayLayout from "../components/InfoDisplayLayout";
-import { ReactComponent as ArcadeIcon } from "../assets/images/icon-arcade.svg";
+import React, { useCallback, useState } from 'react';
+import StepNumberDisplay from '../components/StepNumberDisplay';
+import InfoDisplayLayout from '../components/InfoDisplayLayout';
+import { ReactComponent as ArcadeIcon } from '../assets/images/icon-arcade.svg';
 
-import "../styles/SelectYourPlan.css";
-import { IPlanOption, planOptions } from "../constants";
-import { SYPCard } from "../components/Cards";
-import { useNavigate } from "react-router-dom";
+import '../styles/SelectYourPlan.css';
+import { IPlanOption, planOptions } from '../constants';
+import { SYPCard } from '../components/Cards';
+import { useNavigate } from 'react-router-dom';
 
-const SelectYourPlan = () => {
+function SelectYourPlan() {
   const navigate = useNavigate();
 
   const [displayYearly, setDisplayYearly] = useState<boolean>(false);
 
   const handleNextButton = useCallback(() => {
-    navigate("/add-ons");
+    navigate('/add-ons');
   }, []);
   const handleGoBackButton = useCallback(() => {
-    navigate("/");
+    navigate('/');
   }, [navigate]);
 
   const handlePlanTypeToggle = useCallback(
     (event: React.FormEvent<HTMLInputElement>) => {
       setDisplayYearly(event.currentTarget.checked);
     },
-    []
+    [],
   );
   return (
     <>
@@ -41,7 +41,7 @@ const SelectYourPlan = () => {
                 Icon={Icon}
                 title={title}
                 price={displayYearly ? price * 10 : price}
-                rate={displayYearly ? "yr" : "mo"}
+                rate={displayYearly ? 'yr' : 'mo'}
                 displayYearly={displayYearly}
                 key={`${title}-${displayYearly ? price * 10 : price}`}
               />
@@ -72,6 +72,6 @@ const SelectYourPlan = () => {
       </footer>
     </>
   );
-};
+}
 
 export default SelectYourPlan;

@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import "../styles/FormInput.css";
+import '../styles/FormInput.css';
 
 interface IFormInput {
   formLabelText: string;
@@ -14,19 +14,17 @@ const FormInput: React.FC<IFormInput> = ({
   placeholderText,
   showErrorBorder,
   handler,
-}) => {
-  return (
-    <label className="form-label">
-      {formLabelText}
-      <input
-        type="text"
-        name={formLabelText.toLowerCase()}
-        className={`form-input ${showErrorBorder && "error-border"}`}
-        placeholder={placeholderText}
-        onChange={handler}
-      />
-    </label>
-  );
-};
+}) => (
+  <label className="form-label">
+    {formLabelText}
+    <input
+      type="text"
+      name={formLabelText.toLowerCase()}
+      className={`form-input ${showErrorBorder && 'error-border'}`}
+      placeholder={placeholderText}
+      onChange={handler}
+    />
+  </label>
+);
 
 export default FormInput;
