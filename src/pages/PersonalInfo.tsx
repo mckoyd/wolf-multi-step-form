@@ -78,45 +78,57 @@ const PersonalInfo: React.FC = () => {
   return (
     <>
       <section className="pi-section">
-        {screenSize > layout.mobile ? (
-          <div className="step-display-desktop-layout">
-            <StepNumberDisplay />
-            <BgSidebarDesktop className="bg-sidebar-desktop" />
-          </div>
-        ) : (
-          <StepNumberDisplay />
-        )}
+        {screenSize <= layout.mobile && <StepNumberDisplay />}
 
         <InfoDisplayLayout>
-          <h2 className="pi-title">Personal info</h2>
-          <p className="pi-description">
-            Please provide your name, email address, and phone number.
-          </p>
-          <FormInput
-            formLabelText="Name"
-            placeholderText="e.g. Stephen King"
-            handler={handleNameChange}
-            showErrorBorder={showNameErrorBorder}
-          />
-          <FormInput
-            formLabelText="Email Address"
-            placeholderText="e.g. stephenking@lorem.com"
-            handler={handleEmailAddressChange}
-            showErrorBorder={showEmailAddressErrorBorder}
-          />
-          <FormInput
-            formLabelText="Phone Number"
-            placeholderText="e.g. +1 234 567 890"
-            handler={handlePhoneNumberChange}
-            showErrorBorder={showPhoneNumberErrorBorder}
-          />
+          {screenSize > layout.mobile ? (
+            <div className="step-display-desktop-layout">
+              <StepNumberDisplay />
+              <BgSidebarDesktop className="bg-sidebar-desktop" />
+            </div>
+          ) : (
+            <></>
+          )}
+          <div className="pi-pane">
+            <h2 className="pi-title">Personal info</h2>
+            <p className="pi-description">
+              Please provide your name, email address, and phone number.
+            </p>
+            <FormInput
+              formLabelText="Name"
+              placeholderText="e.g. Stephen King"
+              handler={handleNameChange}
+              showErrorBorder={showNameErrorBorder}
+            />
+            <FormInput
+              formLabelText="Email Address"
+              placeholderText="e.g. stephenking@lorem.com"
+              handler={handleEmailAddressChange}
+              showErrorBorder={showEmailAddressErrorBorder}
+            />
+            <FormInput
+              formLabelText="Phone Number"
+              placeholderText="e.g. +1 234 567 890"
+              handler={handlePhoneNumberChange}
+              showErrorBorder={showPhoneNumberErrorBorder}
+            />
+            {screenSize > layout.mobile && (
+              <footer className="pi-footer">
+                <button className="next-button" onClick={handleNextButton}>
+                  Next Step
+                </button>
+              </footer>
+            )}
+          </div>
         </InfoDisplayLayout>
       </section>
-      <footer className="pi-footer">
-        <button className="next-button" onClick={handleNextButton}>
-          Next Step
-        </button>
-      </footer>
+      {screenSize <= layout.mobile && (
+        <footer className="pi-footer">
+          <button className="next-button" onClick={handleNextButton}>
+            Next Step
+          </button>
+        </footer>
+      )}
     </>
   );
 };
