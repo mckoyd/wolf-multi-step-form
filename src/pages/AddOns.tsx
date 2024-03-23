@@ -33,7 +33,7 @@ const AddOns: React.FC = () => {
           )}
           <div className="ao-pane">
             <h2 className="ao-title">Pick add-ons</h2>
-            <p className="syp-description">
+            <p className="ao-title-description">
               Add-ons help enhance your gaming experience.
             </p>
             <section className="ao-cards">

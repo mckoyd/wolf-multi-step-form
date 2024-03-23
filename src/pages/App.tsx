@@ -9,6 +9,7 @@ import "../styles/App.css";
 import { layout } from "../constants";
 import SelectYourPlan from "./SelectYourPlan";
 import AddOns from "./AddOns";
+import Finish from "./Finish";
 
 const App: React.FC = () => {
   const screenSize = useScreenSizeUpdate();
@@ -22,7 +23,7 @@ const App: React.FC = () => {
         <Route path="/" element={<PersonalInfo />} />
         <Route path="/select-your-plan" element={<SelectYourPlan />} />
         <Route path="/add-ons" element={<AddOns />} />
-        <Route path="/finish" element={<h2>Finish</h2>} />
+        <Route path="/finish" element={<Finish />} />
         <Route path="/thanks" element={<h2>Thanks</h2>} />
       </Routes>
     </section>

@@ -1,0 +1,24 @@
+.finish-section {
+  flex-direction: column;
+  gap: 1em;
+}
+
+.finish-pane {
+}
+
+.finish-title-description {
+  color: #9699aa;
+}
+
+@media only screen and (min-width: 1440px) {
+  .finish-pane {
+    padding: 1em 5em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .finish-title {
+    margin-block: 0;
+  }
+}

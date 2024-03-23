@@ -6,6 +6,10 @@
 .ao-pane {
 }
 
+.ao-title-description {
+  color: #9699aa;
+}
+
 .ao-cards {
   display: flex;
   flex-direction: column;
@@ -33,6 +37,12 @@
   border: 1px solid #483eff;
 }
 
+.ao-card-description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
 .ao-description-container {
   display: flex;
   flex-direction: column;
@@ -55,6 +65,7 @@
   font-size: 0.875em;
   line-height: 1.25em;
   color: #9699aa;
+  margin-bottom: 1em;
 }
 
 .ao-price {
@@ -83,7 +94,19 @@
     width: 100%;
   }
 
-  .syp-title {
+  .ao-title {
     margin-block: 0;
+  }
+
+  .ao-description {
+    margin: 0;
+  }
+
+  .ao-card-description {
+    margin-top: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0.25em;
   }
 }
