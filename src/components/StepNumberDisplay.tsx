@@ -23,13 +23,12 @@ const StepNumberDisplay: React.FC = () => {
             {number}
           </span>
         ) : (
-          <div className="std-container">
+          <div className="std-container" key={`${number}-${index}`}>
             <span
               className={`hollow-num ${
                 location.pathname === pathNamesPerNumber[number].path &&
                 "filled-num"
               }`}
-              key={`${number}-${index}`}
             >
               {number}
             </span>

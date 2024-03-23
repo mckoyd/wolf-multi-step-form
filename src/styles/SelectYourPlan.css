@@ -149,3 +149,52 @@
 .toggle-label:active:after {
   width: 10px;
 }
+.inactive {
+  color: #9688aa;
+}
+
+@media only screen and (min-width: 1440px) {
+  .syp-section {
+    flex-direction: row;
+    width: 75%;
+  }
+
+  .syp-pane {
+    padding: 1em 5em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .syp-title {
+    margin-block: 0;
+  }
+
+  .syp-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1em 0;
+  }
+  .syp-card {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1em;
+  }
+
+  .syp-card-description {
+    margin-top: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    gap: 0.25em;
+  }
+
+  .plan-type-toggle {
+    margin: 1em 0;
+    padding: 0.5em 0;
+  }
+}
