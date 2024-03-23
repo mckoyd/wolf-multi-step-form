@@ -14,7 +14,6 @@ const SelectYourPlan = () => {
   const screenSize = useScreenSizeUpdate();
 
   const [displayYearly, setDisplayYearly] = useState<boolean>(false);
-  const [selectedCard, setSelectedCard] = useState<number>(0);
 
   const handleNextButton = useCallback(() => {
     navigate("/add-ons");
@@ -29,10 +28,6 @@ const SelectYourPlan = () => {
     },
     []
   );
-
-  const handlePlanClick = useCallback((planIndex: number) => {
-    setSelectedCard(planIndex);
-  }, []);
 
   return (
     <>

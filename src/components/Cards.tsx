@@ -1,5 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { IPlanOption } from "../constants";
+import { useSetRecoilState } from "recoil";
+import { planOptions, IPlanOption } from "../constants";
+import { selecetedPlanOptionState } from "../state/planOptionData";
 
 export const SYPCard: React.FC<
   IPlanOption & {
@@ -8,7 +10,10 @@ export const SYPCard: React.FC<
     planIndex: number;
   }
 > = ({ Icon, title, price, rate, displayYearly, planIndex }) => {
-  const [selectedCard, setSelectedCard] = useState<number>();
+  const [selectedCard, setSelectedCard] = useState<number>(-1);
+  const setSelectedPlanOption = useSetRecoilState<IPlanOption>(
+    selecetedPlanOptionState
+  );
 
   const handlePlanClick = useCallback(
     (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -23,6 +28,7 @@ export const SYPCard: React.FC<
 
       event.currentTarget.classList.toggle("syp-selected-card");
       setSelectedCard(planIndex);
+      setSelectedPlanOption(planOptions[planIndex]);
     },
     [planIndex]
   );
