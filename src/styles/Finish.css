@@ -10,6 +10,79 @@
   color: #9699aa;
 }
 
+.plan-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1em;
+  color: #002959;
+}
+
+.finish-plan-title {
+  font-weight: 500;
+  font-size: 1em;
+  line-height: 1em;
+  margin-block: 0;
+  margin: 0.375em 0;
+}
+
+.finish-change-btn {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.finish-plan-price {
+  font-weight: 700;
+  line-height: 1.25em;
+}
+
+.finish-change-btn-text {
+  font-weight: 400;
+  color: #9699aa;
+  text-decoration: underline;
+  line-height: 1.25em;
+}
+
+.finish-divider {
+  color: #979797;
+}
+
+.add-on-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em;
+}
+
+.finish-add-on-title {
+  color: #9699aa;
+  line-height: 1.25em;
+}
+
+.finish-add-on-price {
+  color: #022959;
+  font-weight: 400;
+  line-height: 1.25em;
+}
+
+.total-row {
+  display: flex;
+  margin: 3em 1em 2em 1em;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-row-title {
+  color: #9699aa;
+}
+
+.total-price {
+  color: #483fff;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1.25em;
+}
+
 @media only screen and (min-width: 1440px) {
   .finish-pane {
     padding: 1em 5em;
