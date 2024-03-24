@@ -15,8 +15,10 @@ const StepNumberDisplay: React.FC = () => {
         screenSize <= layout.mobile ? (
           <span
             className={`hollow-num ${
-              location.pathname === pathNamesPerNumber[number].path &&
-              "filled-num"
+              location.pathname === pathNamesPerNumber[number].path ||
+              (location.pathname === "/thanks" && number >= 4)
+                ? "filled-num"
+                : ""
             }`}
             key={`${number}-${index}`}
           >
@@ -26,8 +28,10 @@ const StepNumberDisplay: React.FC = () => {
           <div className="std-container" key={`${number}-${index}`}>
             <span
               className={`hollow-num ${
-                location.pathname === pathNamesPerNumber[number].path &&
-                "filled-num"
+                location.pathname === pathNamesPerNumber[number].path ||
+                (location.pathname === "/thanks" && number >= 4)
+                  ? "filled-num"
+                  : ""
               }`}
             >
               {number}

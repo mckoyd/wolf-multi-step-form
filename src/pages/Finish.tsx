@@ -78,7 +78,7 @@ const Finish: React.FC = () => {
               <div className="finish-add-ons-container">
                 {addOns.map((addOn, index) => {
                   return (
-                    <div className="add-on-row">
+                    <div className="add-on-row" key={`${addOn.title}-${index}`}>
                       <span className="finish-add-on-title">{addOn.title}</span>
                       <span className="finish-add-on-price">
                         +${addOn.price}/{planOption.isYearly ? "yr" : "mo"}
